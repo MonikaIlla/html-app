@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		  <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+		      <title>UI Playground | Modern Practice Sandbox</title>
+		        <!-- Google Fonts & simple reset for clean look -->
+			  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+			    <style>
+    * {
+	          margin: 0;
+		        padding: 0;
+			      box-sizing: border-box;
+			          }
+
+        body {
+		      font-family: 'Inter', sans-serif;
+		            background: radial-gradient(circle at 10% 30%, #f8f9ff, #eef2fa);
+			          min-height: 100vh;
+				        padding: 2rem 1.5rem;
+					      color: #1a2c3e;
+					          }
+
+	    /* custom scrollbar */
+	    ::-webkit-scrollbar {
+		          width: 8px;
+			        height: 8px;
+				    }
+	        ::-webkit-scrollbar-track {
+			      background: #e9ecf3;
+			            border-radius: 12px;
+				        }
+		    ::-webkit-scrollbar-thumb {
+			          background: #b9c3d9;
+				        border-radius: 12px;
+					    }
+		        ::-webkit-scrollbar-thumb:hover {
+				      background: #8f9bb3;
+				          }
+
+			    .container {
+				          max-width: 1400px;
+					        margin: 0 auto;
+						    }
+
+			        /* header area */
+			        .header {
+					      text-align: center;
+					            margin-bottom: 3rem;
+						        }
+				    .header h1 {
+					          font-size: 2.8rem;
+						        font-weight: 700;
+							      background: linear-gradient(135deg, #1F2B48, #2a3f6e);
+							            background-clip: text;
+								          -webkit-background-clip: text;
+									        color: transparent;
+										      letter-spacing: -0.02em;
+										            margin-bottom: 0.5rem;
+											        }
+				        .header p {
+						      font-size: 1.1rem;
+						            color: #4a5b6e;
+							          max-width: 550px;
+								        margin: 0 auto;
+									      font-weight: 400;
+									          }
+
+					    /* grid layout for UI blocks */
+					    .ui-grid {
+						          display: grid;
+							        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+								      gap: 2rem;
+								            margin-bottom: 3rem;
+									        }
+
+					        /* card style — glassmorphism + soft shadows */
+					        .card {
+							      background: rgba(255, 255, 255, 0.75);
+							            backdrop-filter: blur(2px);
+								          border-radius: 2rem;
+									        padding: 1.6rem 1.8rem 2rem 1.8rem;
+										      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.02);
+										            transition: all 0.25s ease;
+											          border: 1px solid rgba(255,255,255,0.6);
+												      }
+						    .card:hover {
+							          transform: translateY(-4px);
+								        background: rgba(255, 255, 255, 0.85);
+									      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
+									            border-color: rgba(255,255,255,0.9);
+										        }
+
+						        .card-title {
+								      font-size: 1.5rem;
+								            font-weight: 600;
+									          margin-bottom: 0.25rem;
+										        display: flex;
+											      align-items: center;
+											            gap: 0.6rem;
+												          color: #1e2f41;
+													      }
+							    .card-sub {
+								          font-size: 0.85rem;
+									        color: #5b6f88;
+										      border-left: 3px solid #7c8dff;
+										            padding-left: 0.75rem;
+											          margin-bottom: 1.4rem;
+												        font-weight: 500;
+													    }
+
+							        /* buttons group */
+							        .btn-group {
+									      display: flex;
+									            flex-wrap: wrap;
+										          gap: 0.8rem;
+											        margin: 1rem 0;
+												    }
+								    .btn {
+									          padding: 0.6rem 1.3rem;
+										        border-radius: 60px;
+											      font-weight: 500;
+											            font-size: 0.9rem;
+												          border: none;
+													        cursor: pointer;
+														      transition: 0.2s;
+														            background: white;
+															          box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+																        font-family: inherit;
+																	    }
+								        .btn-primary {
+										      background: #2d3e6e;
+										            color: white;
+											          box-shadow: 0 4px 8px rgba(45, 62, 110, 0.2);
+												      }
+									    .btn-primary:hover {
+										          background: #1f2e52;
+											        transform: scale(0.97);
+												      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+												          }
+									        .btn-secondary {
+											      background: #eef2ff;
+											            color: #2d3e6e;
+												          border: 1px solid #cdd9ff;
+													      }
+										    .btn-secondary:hover {
+											          background: #e2e9ff;
+												        transform: scale(0.97);
+													    }
+										        .btn-outline {
+												      background: transparent;
+												            border: 1px solid #bac8e0;
+													          color: #2b405b;
+														      }
+											    .btn-outline:hover {
+												          background: #ffffffbb;
+													        border-color: #7c8dff;
+														    }
+
+											        /* form elements */
+											        .input-group {
+													      margin: 1.2rem 0 1rem;
+													          }
+												    label {
+													          font-size: 0.8rem;
+														        font-weight: 600;
+															      text-transform: uppercase;
+															            letter-spacing: 0.5px;
+																          color: #4f6f8f;
+																	        display: block;
+																		      margin-bottom: 0.4rem;
+																		          }
+												        input, select, textarea {
+														      width: 100%;
+														            padding: 0.8rem 1rem;
+															          border-radius: 1.2rem;
+																        border: 1px solid #dce3ef;
+																	      background: #ffffffcc;
+																	            font-family: 'Inter', monospace;
+																		          font-size: 0.9rem;
+																			        transition: 0.2s;
+																				      outline: none;
+																				          }
+													    input:focus, select:focus, textarea:focus {
+														          border-color: #7c8dff;
+															        box-shadow: 0 0 0 3px rgba(124, 141, 255, 0.2);
+																      background: white;
+																          }
+													        .range-value {
+															      display: flex;
+															            justify-content: space-between;
+																          margin-top: 0.4rem;
+																	        font-size: 0.75rem;
+																		      color: #526e8c;
+																		          }
+
+														    /* toggle switch */
+														    .toggle-switch {
+															          display: flex;
+																        align-items: center;
+																	      gap: 1rem;
+																	            margin: 1rem 0;
+																		        }
+														        .switch {
+																      position: relative;
+																            display: inline-block;
+																	          width: 52px;
+																		        height: 28px;
+																			    }
+															    .switch input {
+																          opacity: 0;
+																	        width: 0;
+																		      height: 0;
+																		          }
+															        .slider {
+																	      position: absolute;
+																	            cursor: pointer;
+																		          top: 0;
+																			        left: 0;
+																				      right: 0;
+																				            ;
+																					          height: 22px;
+																						        width: 22px;
+																							      left: 3px;
+																							            bottom: 3px;
+																								          background-color: white;
+																									        transition: 0.3s;
+																										      border-radius: 50%;
+																										          }
+																    input:checked + .slider {
+																	          background-color: #2d3e6e;
+																		      }
+																        input:checked + .slider:before {
+																		      transform: translateX(24px);
+																		          }
+
+																	    /* badge & chips */
+																	    .chips {
+																		          display: flex;
+																			      center;
+																			            margin-top: 2.5rem;
+																				          font-size: 0.75rem;
+																					        color: #6f85a0;
+																						      border-top: 1px solid rgba(100, 120, 150, 0.2);
+																						            padding-top: 2rem;
+																							        }
+
+																	        @media (max-width: 760px) {
+																			      body {
+																				              padding: 1.25rem;
+																					           ect id="trendSelect">
+																						             <option>Glassmorphism</option>
+																							               <option>Neumorphism</option>
+																								                 <option>Brutalism</option>
+																										           <option>Soft U>
+																											           <span>🎨</span> Micro interactions
+																													         </div>
+																												         <div class="card-sub">chips, color picker,  <div class="color-dot" style="background:#ef4444;" data-color="red"></ogress-section">
+																													         <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+																														           <span style="font-size:0.75rem; font-weight:500;">Skill meter</span>
+																															             <span id="progressPercent" style="font-size:0.75rem;">65%</span>
+																																             </div>
+																																	             <div class="progress-bg">
+																																		               <div class="progress-fill" id="progressFill" style="width:65%"></div>
+																																			               </div>
+																																				             </div>
+																																					           <button id="increaseProgress" class="btn btn-secondary" style="margin-top: 0.6rem;">+10% progress</button>
+																																						         <div id="microFeedback" class="feedback-area" style="margin-top: 1rem;">
+																																							         🎯 click chips or colors → active style
+																																									       </div>
+																																								     </div>
+
+																																								         <!-- Card 4: toast, textarea & counter -->
+																																									     <div class="ach(card => card.style.background = "rgba(255, 255, 255, 0.75)");
+																																								             document.querySelectorAll('.feedback-area').forEach(fb => fb.style.background = "#f4f7fe");
+																																									             document.querySelectorAll('.chip').forEach(c => c.style.background = "#eef2ff");
+																																										             updateFormFeedback("Light mode restored — fresh vibes");
+																																											           }
+																			          });
+
+																			      // ----- CHIPS ACTIVE STATE & COLOR PALETTE ----------
+																			          const chips = document.querySelectorAll('#chipContainer .chip');
+																				      const microFeedback = document1 ? 's' : '');
+																			            liveFeedbackDiv.innerHTML = `📝 ${len} chars — ${len === 0 ? 'start typing your thoughts' : 'nice content!'}`;
+																				          if(len > 80) liveFeedbackDiv.innerHTML += ' 🔥 getting lengthy';
+																					      }
+																					          messageArea?.addEventListener('input', updateCharCounter);
+																						      clearMsgBtn?.addEventListener('click', () => {
+																							           ();
+																								   </script>
+																								   </body>
+</html>
